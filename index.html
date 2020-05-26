@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>FUN-GAME</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style>
+		*,
+		*::after,
+		*::before {
+			margin: 0;
+			padding: 0;
+			font-size: 62, 5%;
+		}
+
+		body {
+			display: block;
+			background: #0f2027;
+			height: 60vh;
+			color: #fff;
+		}
+
+		.form__label {
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.2rem;
+			margin-left: 2rem;
+			margin-top: 0.7rem;
+			display: block;
+			transition: all 0.3s;
+			transform: translateY(0rem);
+		}
+
+		.form__group {
+			width: 100%;
+			display: block;
+		}
+
+		.form__input {
+			float: left;
+			font-family: 'Roboto', sans-serif;
+			color: #333;
+			font-size: 1.2rem;
+			padding: 1.5rem 1rem;
+			border-radius: 0.2rem;
+			background-color: rgb(255, 255, 255);
+			border: none;
+			width: 30%;
+			display: block;
+			border-bottom: 0.3rem solid transparent;
+			transition: all 0.3s;
+		}
+
+		.form__input:placeholder-shown+.form__label {
+			opacity: 0;
+			visibility: hidden;
+			-webkit-transform: translateY(-4rem);
+			transform: translateY(-4rem);
+		}
+
+		h1 {
+			text-align: center;
+			color: green;
+		}
+
+		button {
+			margin-bottom: 10px;
+			font-family: 'Roboto', sans-serif;
+			color: #333;
+			font-size: 1.2rem;
+			padding: 0.5rem 1rem;
+			border-radius: 0.2rem;
+			background-color: rgb(255, 255, 255);
+			border: none;
+			width: 3%;
+			height: 53px;
+			display: block;
+			border-bottom: 0.3rem solid transparent;
+			transition: all 0.3s;
+			margin-top: 0px;
+		}
+
+		p,label {
+			color: #37f9f9;
+			font-size: 24px;
+			font-family: sans-serif;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="form__group">
+		<input type="text" class="form__input" id="name" placeholder="ENTER ANY DIGIT 1 TO 6" required="" />
+		<label for="name" class="form__label">ENTER ANY DIGIT 1 TO 6</label>
+		<button type="button" onclick="myFunction()">&raquo;</button>
+	</div><br>
+
+	<hr>
+	<p id="result"></p>
+	<script>
+		function myFunction() {
+			var textInput = document.getElementById("name").value;
+			var random_ = document.getElementById("result").innerHTML =
+				Math.floor(Math.random() * 5) + 1;
+			if (textInput == "") {
+				alert("Number must be filled out");
+				return false;
+			} else {
+
+				if (textInput == random_) {
+					document.getElementById("result").innerHTML = "HURRAY ! ,You Won!";
+				} else {
+					document.getElementById("result").innerHTML = "SORRY! ,You Lost,Please Try Again.Number will be : " + random_;
+				}
+			}
+		}
+
+	</script>
+</body>
+
+</html>
